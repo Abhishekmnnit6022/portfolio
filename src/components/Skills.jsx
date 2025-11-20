@@ -1,21 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SiCplusplus, SiJavascript, SiPython, SiReact, SiMongodb, SiGooglecloud, SiFirebase, SiMysql, SiGit } from 'react-icons/si';
-import { FiCode } from 'react-icons/fi'; // Fallback icon
+import { SiCplusplus, SiJavascript, SiPython, SiReact, SiNodedotjs, SiMongodb, SiGooglecloud, SiFirebase, SiMysql, SiGit, SiAndroid } from 'react-icons/si';
+import { VscVscode } from 'react-icons/vsc';
 
 const skills = [
     { name: 'C++', Icon: SiCplusplus, color: '#00599C' },
     { name: 'JavaScript', Icon: SiJavascript, color: '#F7DF1E' },
     { name: 'Python', Icon: SiPython, color: '#3776AB' },
     { name: 'React Native', Icon: SiReact, color: '#61DAFB' },
-    { name: 'Node.js', Icon: FiCode, color: '#339933' }, // Fallback for SiNodedotjs
+    { name: 'Node.js', Icon: SiNodedotjs, color: '#339933' },
     { name: 'MongoDB', Icon: SiMongodb, color: '#47A248' },
     { name: 'GCP', Icon: SiGooglecloud, color: '#4285F4' },
     { name: 'Firebase', Icon: SiFirebase, color: '#FFCA28' },
     { name: 'MySQL', Icon: SiMysql, color: '#4479A1' },
     { name: 'Git', Icon: SiGit, color: '#F05032' },
-    { name: 'VS Code', Icon: FiCode, color: '#007ACC' }, // Fallback for SiVisualstudiocode
-    { name: 'Android Studio', Icon: FiCode, color: '#3DDC84' }, // Fallback for SiAndroidstudio
+    { name: 'VS Code', Icon: VscVscode, color: '#007ACC' },
+    { name: 'Android Studio', Icon: SiAndroid, color: '#3DDC84' },
 ];
 
 const Skills = () => {
