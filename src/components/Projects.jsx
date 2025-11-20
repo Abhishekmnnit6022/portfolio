@@ -5,26 +5,26 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi';
 const projects = [
     {
         title: 'Wrapper – AI-Powered Finance Tracker',
-        description: 'AI-powered mobile app for expense tracking and financial visualization. Features interactive data visualization with responsive charts, multi-currency support, and OCR for receipt scanning.',
+        description: 'A comprehensive AI-driven financial management solution designed to streamline expense tracking. Leverages advanced OCR technology for instant receipt scanning, supports multi-currency transactions for global usability, and provides automated, detailed expense reports for actionable financial insights.',
         tags: ['React Native', 'SQLite', 'Expo Go', 'Chart.js'],
-        github: 'https://github.com/Abhishekmmnit6022',
-        demo: '#',
-        image: 'https://via.placeholder.com/600x400/0f172a/38bdf8?text=Wrapper+Finance+App'
+        github: 'https://github.com/Abhishekmnnit6022/Wrapper-',
+        demo: 'https://youtu.be/jnlp1WfTg1I',
+        image: 'https://via.placeholder.com/600x400' // Ideally replace with a screenshot if available
     },
     {
         title: 'SafeChalein – Personal Security App',
-        description: 'Personal security app featuring emergency response capabilities. Includes real-time location tracking, fake call functionality, and automated SOS alerts with photo/audio capture.',
-        tags: ['React Native', 'Node.js', 'MongoDB', 'Twilio', 'Google Maps API'],
-        github: 'https://github.com/Abhishekmmnit6022',
-        demo: '#',
-        image: 'https://via.placeholder.com/600x400/0f172a/38bdf8?text=SafeChalein+Security+App'
+        description: 'A robust personal safety application engineered to minimize emergency response times. Integrates real-time location sharing, a discrete fake call feature for exit strategies, and an automated SOS system that captures and transmits audio/visual evidence to emergency contacts instantly.',
+        tags: ['React Native', 'Expo', 'Node.js', 'MongoDB', 'Twilio', 'Google Maps API'],
+        github: 'https://github.com/Abhishekmnnit6022/safechalein',
+        demo: 'https://drive.google.com/file/d/1m_fFWapj3Cfa_1J1Pbih1-DFu8bkImhG/view',
+        image: 'https://via.placeholder.com/600x400'
     },
 ];
 
 const Projects = () => {
     return (
-        <section id="projects" className="py-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="projects" className="py-20 relative">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -32,13 +32,13 @@ const Projects = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">Featured Projects</h2>
-                    <p className="text-muted max-w-2xl mx-auto">
-                        A selection of projects I've worked on recently.
+                    <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-4 text-glow">Featured Projects</h2>
+                    <p className="text-muted max-w-2xl mx-auto text-lg">
+                        Some of the things I've built.
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
@@ -46,24 +46,45 @@ const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-secondary rounded-xl overflow-hidden shadow-lg hover:shadow-accent/20 transition-all duration-300 group border border-gray-800"
+                            whileHover={{ y: -10 }}
+                            className="glass rounded-2xl overflow-hidden flex flex-col h-full group glass-hover"
                         >
-                            <div className="p-6">
-                                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
+                            <div className="p-8 flex flex-col flex-grow">
+                                <h3 className="text-2xl font-heading font-bold text-white mb-3 group-hover:text-accent transition-colors">
                                     {project.title}
                                 </h3>
-                                <p className="text-muted mb-4 line-clamp-3">
+                                <p className="text-gray-400 mb-6 flex-grow leading-relaxed">
                                     {project.description}
                                 </p>
-                                <div className="flex flex-wrap gap-2">
+
+                                <div className="flex flex-wrap gap-2 mb-8">
                                     {project.tags.map((tag) => (
                                         <span
                                             key={tag}
-                                            className="px-3 py-1 text-xs font-medium text-accent bg-accent/10 rounded-full"
+                                            className="px-3 py-1 text-xs font-medium text-accent bg-accent/10 rounded-full border border-accent/20"
                                         >
                                             {tag}
                                         </span>
                                     ))}
+                                </div>
+
+                                <div className="flex gap-4 mt-auto">
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-accent/20 text-white hover:text-accent transition-all border border-white/10 hover:border-accent/30"
+                                    >
+                                        <FiGithub /> Code
+                                    </a>
+                                    <a
+                                        href={project.demo}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-accent text-primary hover:bg-cyan-400 transition-all font-medium shadow-[0_0_15px_rgba(0,240,255,0.3)] hover:shadow-[0_0_25px_rgba(0,240,255,0.5)]"
+                                    >
+                                        <FiExternalLink /> Demo
+                                    </a>
                                 </div>
                             </div>
                         </motion.div>

@@ -4,21 +4,28 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        primary: "#0f172a", // Slate 900
-        secondary: "#1e293b", // Slate 800
-        accent: "#38bdf8", // Sky 400
-        text: "#f8fafc", // Slate 50
-        muted: "#94a3b8", // Slate 400
+        primary: "rgb(var(--color-primary) / <alpha-value>)",
+        secondary: "rgb(var(--color-secondary) / <alpha-value>)",
+        accent: "rgb(var(--color-accent) / <alpha-value>)",
+        "accent-glow": "rgb(var(--color-accent-glow) / 0.5)",
+        text: "rgb(var(--color-text) / <alpha-value>)",
+        muted: "rgb(var(--color-muted) / <alpha-value>)",
+        glass: "rgb(var(--color-glass) / <alpha-value>)",
+        "glass-hover": "rgb(var(--color-glass-hover) / 0.08)",
+        "glass-border": "rgb(var(--color-glass-border) / 0.1)",
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        heading: ['Outfit', 'sans-serif'],
+        heading: ['"Outfit"', 'sans-serif'],
+        sans: ['"Inter"', 'sans-serif'],
       },
       animation: {
         blob: "blob 7s infinite",
+        "spin-slow": "spin 10s linear infinite",
+        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       keyframes: {
         blob: {
@@ -35,6 +42,9 @@ export default {
             transform: "translate(0px, 0px) scale(1)",
           },
         },
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
     },
   },

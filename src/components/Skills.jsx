@@ -20,8 +20,8 @@ const skills = [
 
 const Skills = () => {
     return (
-        <section id="skills" className="py-20 bg-secondary/30">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="skills" className="py-20 relative">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -29,13 +29,13 @@ const Skills = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">Technical Skills</h2>
-                    <p className="text-muted max-w-2xl mx-auto">
+                    <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-4 text-glow">Technical Skills</h2>
+                    <p className="text-muted max-w-2xl mx-auto text-lg">
                         Languages, frameworks, and tools I use to bring ideas to life.
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {skills.map((skill, index) => {
                         const IconComponent = skill.Icon;
                         return (
@@ -45,14 +45,16 @@ const Skills = () => {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.3, delay: index * 0.05 }}
                                 viewport={{ once: true }}
-                                whileHover={{ y: -5, scale: 1.05 }}
-                                className="bg-primary p-6 rounded-xl shadow-lg hover:shadow-accent/20 border border-gray-800 flex flex-col items-center justify-center gap-4 group transition-all duration-300"
+                                whileHover={{ y: -10, scale: 1.05 }}
+                                className="glass p-6 rounded-2xl flex flex-col items-center justify-center gap-4 group cursor-pointer glass-hover relative overflow-hidden"
                             >
+                                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
                                 <div
-                                    className="text-gray-400 group-hover:text-[var(--skill-color)] transition-colors duration-300"
+                                    className="text-gray-400 group-hover:text-[var(--skill-color)] transition-all duration-300 transform group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_var(--skill-color)]"
                                     style={{ '--skill-color': skill.color }}
                                 >
-                                    <IconComponent size={40} />
+                                    <IconComponent size={48} />
                                 </div>
                                 <h3 className="text-lg font-medium text-gray-300 group-hover:text-white transition-colors duration-300">
                                     {skill.name}
