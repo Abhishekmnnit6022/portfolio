@@ -100,7 +100,7 @@ const Contact = () => {
               <input type="hidden" name="_captcha" value="false" />
 
               {/* Success Page (Optional - redirects back to home or a thank you page) */}
-              <input type="hidden" name="_next" value="http://localhost:5173/" />
+              <input type="hidden" name="_next" value="http://abhishekrastogi.vercel.app/" />
 
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
